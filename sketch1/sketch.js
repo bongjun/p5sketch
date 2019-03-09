@@ -15,8 +15,8 @@ function setup(){
   //background(255, 204, 0);
   
 
-  mic = new p5.AudioIn()
-  mic.start();
+  // mic = new p5.AudioIn()
+  // mic.start();
   //fft = new p5.FFT();
   //fft.setInput([mic])
   
@@ -29,7 +29,7 @@ function setup(){
 function draw(){
   background(255, 204, 0);
   
-  micLevel = mic.getLevel();
+  //micLevel = mic.getLevel();
   strokeWeight(5)
   
   //let newMicVol = map(micLevel, 0, 0.03, 0, height);
