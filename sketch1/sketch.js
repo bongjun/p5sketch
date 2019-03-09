@@ -39,15 +39,15 @@ function draw(){
   //fill(10, 10, 10);
   //ellipe(mouseX, 200, newMicVol, newMicVol);
   
-  push()
-  let angle = map(micLevel, 0, 0.03, 0, 360);
+  // push()
+  // let angle = map(micLevel, 0, 0.03, 0, 360);
 
-  angleMode(DEGREES);
-  translate(width/2-50, height/2-50);
-  rotate(angle);
-  fill(134, 13, 255);
-  rect(width/2-50, height/2-50, 100, 100)
-  pop()
+  // angleMode(DEGREES);
+  // translate(width/2-50, height/2-50);
+  // rotate(angle);
+  // fill(134, 13, 255);
+  // rect(width/2-50, height/2-50, 100, 100)
+  // pop()
   
   
   //var spectrum = fft.analyze();
