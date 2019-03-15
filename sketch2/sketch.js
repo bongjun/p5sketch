@@ -16,6 +16,7 @@ function mouseClicked(){
 }
 
 function keyPressed(){
+  console.log("keypressed");
   if (keyCode == LEFT_ARROW) {
     balls[balls.length-1].rgbt = [255, 255, 255, 255];
     balls.pop();
