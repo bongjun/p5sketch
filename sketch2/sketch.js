@@ -19,9 +19,11 @@ function keyPressed(){
   if (keyCode === LEFT_ARROW) {
     balls[balls.length-1].rgbt = [255, 255, 255, 255];
     balls.pop();
+    console.log('left')
   } else if (keyCode === RIGHT_ARROW) {
     newBall = new Ball(width/2, height/2, 50, [255, 255, 255, 255]);
     balls.push(newBall);
+    console.log('right')
   }
 }
 
