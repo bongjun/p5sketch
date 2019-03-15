@@ -1,13 +1,30 @@
 let balls = [];
 let direction=1
 function setup() {
-  createCanvas(500, 500);
+  createCanvas(800, 500);
   
-  for (let i = 0; i< 100; i++){
-  balls[i] = new Ball(width/2, height/2, 50);
+  for (let i = 0; i< 20; i++){
+  balls[i] = new Ball(width/2, height/2, 50, [255, 0, 255, 127]);
   }
  
 }
+
+function mouseClicked(){
+  for (let i=0; i<balls.length; i++){
+    balls[i].clicked()
+  }
+}
+
+function keyPressed(){
+  if (keyCode === LEFT_ARROW) {
+    balls[balls.length-1].rgbt = [255, 255, 255, 255];
+    balls.pop();
+  } else if (keyCode === RIGHT_ARROW) {
+    newBall = new Ball(width/2, height/2, 50, [255, 255, 255, 255]);
+    balls.push(newBall);
+  }
+}
+
 
 function draw() {
   background(0);
@@ -24,5 +41,13 @@ function draw() {
        direction = 2*scaler
     }
      balls[i].r+=1*direction
+    
+    if (balls[i].rgbt[3] >127){
+      balls[i].rgbt[3] = balls[i].rgbt[3] -3
+    }
+    if (balls[i].rgbt[1] >0){
+      balls[i].rgbt[1] = balls[i].rgbt[1] -3
+    }
+    
   }
 }
