@@ -3,9 +3,9 @@ let direction=1
 function setup() {
   createCanvas(800, 500);
   
-  for (let i = 0; i< 20; i++){
-  balls[i] = new Ball(width/2, height/2, 50, [255, 0, 255, 127]);
-  }
+  // for (let i = 0; i< 20; i++){
+  // balls[i] = new Ball(width/2, height/2, 50, [255, 0, 255, 127]);
+  // }
  
 }
 
@@ -32,25 +32,25 @@ function keyPressed(){
 function draw() {
   background(0);
   
-  for (let i=0; i<balls.length; i++){
-    balls[i].move();
-    balls[i].show();
+  // for (let i=0; i<balls.length; i++){
+  //   balls[i].move();
+  //   balls[i].show();
     
-    if (balls[i].r > 30){
-       scaler = random(0, 1)
-       direction = -2*scaler
-    }else if(balls[i].r <= 10){
-       scaler = random(0, 1)
-       direction = 2*scaler
-    }
-     balls[i].r+=1*direction
+  //   if (balls[i].r > 30){
+  //      scaler = random(0, 1)
+  //      direction = -2*scaler
+  //   }else if(balls[i].r <= 10){
+  //      scaler = random(0, 1)
+  //      direction = 2*scaler
+  //   }
+  //    balls[i].r+=1*direction
     
-    if (balls[i].rgbt[3] >127){
-      balls[i].rgbt[3] = balls[i].rgbt[3] -3
-    }
-    if (balls[i].rgbt[1] >0){
-      balls[i].rgbt[1] = balls[i].rgbt[1] -3
-    }
+  //   if (balls[i].rgbt[3] >127){
+  //     balls[i].rgbt[3] = balls[i].rgbt[3] -3
+  //   }
+  //   if (balls[i].rgbt[1] >0){
+  //     balls[i].rgbt[1] = balls[i].rgbt[1] -3
+  //   }
     
-  }
+  // }
 }
