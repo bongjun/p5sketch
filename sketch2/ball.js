@@ -51,4 +51,8 @@ class Ball {
     return (d < this.r);
   }
   
+  sizeUp(amount){
+    this.r += amount
+  }
+  
 }

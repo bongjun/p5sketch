@@ -2,26 +2,50 @@ let balls = [];
 let direction=1;
 let defaultColor = [255, 0, 255, 127];
 let numOfBalls = 30;
+let slider;
 
 function setup() {
+  createElement('h2', 'Mouse interaction: click the balls in canvas!');
   createCanvas(800, 500);
    
   for (let i = 0; i< numOfBalls; i++){
   balls[i] = new Ball(width/2, height/2, 50, defaultColor);
   }
- 
+ // createP('');
+  createP('Control the size of balls!!');
+  slider = createSlider(0, 100, 0);
+  //slider.position(10, height+20);
+  slider.size(500);
+  //slider.changed(changeSize);
+  
+  createP('Add more balls!');
+  button = createButton('Add');
+  button.size(100);
+  button.mousePressed(addBalls);
 }
 
 function mouseClicked(){
     for (let b of balls){
-      b.clicked(mouseX, mouseY)
+      b.clicked(mouseX, mouseY);
     }
   // for (let i=0; i<balls.length; i++){
   //   balls[i].clicked(mouseX, mouseY)
   // }
 }
 
+// function changeSize(){
+//   for (let b of balls){
+//     b.r = slider.value();
+//   }
+  
+// }
 
+function addBalls(){
+  let newBall = new Ball(random(0, width), random(0, height), 50, defaultColor)
+  newBall.rgbt = [255, 255, 255, 255]
+  balls.push(newBall);
+  
+}
 
 function keyPressed(){
   if (keyCode == LEFT_ARROW) {
@@ -51,14 +75,17 @@ function draw() {
     b.recoverColor();
     
     // moving sizes
-    if (b.r > 50){
+    if (b.r > 50 + slider.value()){
        scaler = random(0, 1)
        direction = -2*scaler
-    }else if(b.r <= 30){
+    }else if(b.r <= 30+ slider.value()){
        scaler = random(0, 1)
        direction = 2*scaler
     }
     b.r+=1*direction
+    //changeSize();
+    //let val = slider.value()
+    //b.changeRGBT([slider.value(), 0, 255, 127]);
     
     // mouse over
     // if (b.mouseOver(mouseX, mouseY)){
